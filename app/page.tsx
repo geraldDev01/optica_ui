@@ -7,9 +7,6 @@ export default function Home() {
       <Button variant="destructive" size="lg">
         Hola como estas
       </Button>
-      <Button variant="secondary" size="lg">
-        Hola co
-      </Button>
     </>
   );
 }
