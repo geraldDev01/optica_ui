@@ -1,0 +1,20 @@
+import { ArrowLeftCircle } from "lucide-react";
+import Link from "next/link";
+
+interface IBackButton {
+  text: string;
+  link: string;
+}
+const BackButton = ({ link, text }: IBackButton) => {
+  return (
+    <Link
+      href={link}
+      className="text-gray-500 hover:underline flex items-center gap-1 mb-5"
+    >
+      <ArrowLeftCircle size={18} />
+      {text}
+    </Link>
+  );
+};
+
+export default BackButton;
