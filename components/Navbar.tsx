@@ -10,6 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ModeToggle } from "./providers/ModeToggle";
 
 const Navbar = () => {
   return (
@@ -18,26 +19,31 @@ const Navbar = () => {
         <Image src={logoImg} alt="logo" width={40} />
       </Link>
 
-      <DropdownMenu>
-        <DropdownMenuTrigger className="focus:outline-none">
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="chadcn" />
-            <AvatarFallback className="text-black">GR</AvatarFallback>
-          </Avatar>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>Mi cuenta</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Link className="cursor-pointer" href="/profile">
-              Perfil
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link  className="cursor-pointer" href="/auth">Salir</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className="flex items-center">
+        <ModeToggle />
+        <DropdownMenu>
+          <DropdownMenuTrigger className="focus:outline-none">
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" alt="chadcn" />
+              <AvatarFallback className="text-black">GR</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>Mi cuenta</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <Link className="cursor-pointer" href="/profile">
+                Perfil
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link className="cursor-pointer" href="/auth">
+                Salir
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 };
